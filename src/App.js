@@ -18,6 +18,11 @@ function App() {
             <Votd />
         </div>
       </div>
+      <div className="Credits">
+          Credits:
+          <a href="https://youversion.com/" target="_blank" rel="noopener noreferrer">YouVersion</a>,
+          <a href="https://unsplash.com/collections/162213/long-exposure" target="_blank" rel="noopener noreferrer"> Unsplash</a>
+      </div>
     </div>
     </Fade>
   );
