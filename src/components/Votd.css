@@ -1,0 +1,44 @@
+.Votd {
+ display: flex;
+ flex-direction: column;
+ align-items: left;
+ justify-content: center;
+ min-height: 40vh;
+ margin: 0 1rem;
+ text-align: left;
+ animation: verseAnimation 3s ease-in;
+}
+
+.Votd-text {
+ color: #FFFFFF;
+ /* background-color: rgba(255, 255, 255, 0.5); */
+ padding: 0 15% 1% 15%;
+ font-family: 'Raleway', sans-serif;
+ font-size: calc(15px + 4vmin);
+ text-shadow: 1px 1px 20px #1a1918;
+ line-height: 1.5;
+}
+
+.Votd-ref {
+ font-family: 'Roboto', sans-serif;
+ font-size: calc(7px + 2vmin);
+ opacity: 0.8;
+ margin: 0;
+ color: #404041;
+ background-color: #FFFFFF;
+ display: block;
+ padding: 0.25rem 0.5rem;
+ border-radius: 999px;
+ width: max-content;
+}
+
+
+.Votd-ref:hover {
+ opacity: 1.0
+}
+
+.Votd-url-ref {
+ text-decoration: none;
+ color: #000000;
+ width: max-content
+}

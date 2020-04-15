@@ -1,0 +1,9 @@
+{
+    "name": "VOTD Extension",
+    "version": "1.0",
+    "description": "VOTD-Extenstion",
+    "manifest_version": 2,
+    "chrome_url_overrides" : {
+        "newtab": "public/index.html"
+    }
+}

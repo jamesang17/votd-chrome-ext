@@ -1,0 +1,7 @@
+.Clock {
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(15px + 20vmin);
+    color: #FFFFFF;
+    text-shadow: 0px 0px 200px #1a1918;
+    margin-bottom: -3%;
+}

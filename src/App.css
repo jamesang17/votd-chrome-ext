@@ -1,0 +1,39 @@
+.App {
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    background-color: #111;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://source.unsplash.com/collection/162213/1600x900/daily');
+    /* background-image: url('images/image.jpg'); */
+    transition: background-image 2s;
+    -webkit-transition: background-image 2s
+}
+
+.App-main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.Time-container {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.Time-component {
+    min-height: 10vh;
+}
+
+.Votd {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}

@@ -1,0 +1,11 @@
+.Greeting-container {
+    min-height: 5vh;
+}
+
+.Greeting {
+    font-size: calc(15px + 4vmin);
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0px 0px 200px #1a1918;
+    margin: 0 0 3% 0;
+}
