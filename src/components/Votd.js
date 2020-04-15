@@ -42,7 +42,6 @@ export default class Votd extends React.Component {
             if (localStorage.hasOwnProperty(key)) {
                 // get the key's value from localStorage
                 let value = localStorage.getItem(key);
-
                 // parse the localStorage string and setState
                 try {
                     value = JSON.parse(value);
@@ -66,7 +65,6 @@ export default class Votd extends React.Component {
 
     componentDidMount() {
         this.hydrateStateWithLocalStorage();
-        this.getVerse();
 
         // add event listener to save state to localStorage
         // when user leaves/refreshes the page
@@ -74,6 +72,12 @@ export default class Votd extends React.Component {
             "beforeunload",
             this.saveStateToLocalStorage.bind(this)
         );
+    }
+
+    componentDidUpdate(prevState) {
+        if (prevState.day !== this.state.day) {
+            this.getVerse();
+        }
     }
 
     render() {
