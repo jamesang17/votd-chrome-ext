@@ -6,8 +6,8 @@
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('https://source.unsplash.com/collection/162213/1600x900/daily');
-    /* background-image: url('images/image.jpg'); */
+    background-image: url('https://source.unsplash.com/collection/152630/1600x900/daily');
+    /* background-image: url('https://source.unsplash.com/daily'); */
     transition: background-image 2s;
     -webkit-transition: background-image 2s
 }
@@ -25,10 +25,11 @@
     align-items: center;
     justify-content: center;
     flex: 1;
+    margin-bottom: -3%;
 }
 
 .Time-component {
-    min-height: 10vh;
+    min-height: 5vh;
 }
 
 .Votd {
