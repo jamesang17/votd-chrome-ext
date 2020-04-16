@@ -1,5 +1,6 @@
 import React from 'react';
 import './Greeting.css';
+import Name from './Name';
 
 export default class Greeting extends React.Component {
     constructor(props) {
@@ -28,11 +29,11 @@ export default class Greeting extends React.Component {
     getGreeting() {
         var time = Date.now();
         if (time < this.state.noon && time >= this.state.morning) {
-            this.setState({ greeting: "Good morning." });
+            this.setState({ greeting: "Good morning" });
         } else if (time < this.state.evening && time >= this.state.noon) {
-            this.setState({ greeting: "Good afternoon." });
+            this.setState({ greeting: "Good afternoon" });
         } else {
-            this.setState({ greeting: "Good evening." });
+            this.setState({ greeting: "Good evening" });
         }
 
     }
@@ -53,6 +54,7 @@ export default class Greeting extends React.Component {
         return(
             <div className="Greeting-container">
                 <p className="Greeting">{this.state.greeting}</p>
+                <Name />
             </div>
         )
     }

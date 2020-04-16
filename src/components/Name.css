@@ -1,13 +1,9 @@
-.Greeting-container {
-    min-height: 5vh;
+.Name-container {
     display: flex;
-    align-items: center;
     flex-direction: row;
-    justify-content: center;
-    margin: 0 0 5% 0;
 }
 
-.Greeting {
+.Name {
     font-size: calc(15px + 8vmin);
     color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
