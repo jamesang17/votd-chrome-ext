@@ -4,6 +4,7 @@ Chrome Extension that overrides the new tab page to display the verse of the day
 Example:
 ![Example Image](https://github.com/jamesang17/votd-chrome-ext/blob/master/example_img.png)
 
+![](https://github.com/jamesang17/votd-chrome-ext/blob/master/votd-demo.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
