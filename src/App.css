@@ -44,6 +44,7 @@
 }
 
 .Credits {
+  font-size: 0.9em;
   border-radius: 999px;
   bottom: 16px;
   color: #FFF;
@@ -65,7 +66,8 @@
   text-shadow: none;
   opacity: 1;
   color: #404041;
-  background-color: rgba(245,245,245,0.5);
+
+  background-color: rgba(245,245,245,0.7);
 }
 
 .Credits a {
@@ -75,5 +77,40 @@
 
 .Credits a:hover {
   display: inline-block;
-  color: #00a8d8
+  color: #078fb8;
+}
+
+.Source-ref {
+    font-size: 0.8em;
+    border-radius: 999px;
+    bottom: 1px;
+    color: #FFF;
+    position: absolute;
+    opacity: 0.5;
+    right: 0;
+    margin: auto;
+    background-color: transparent;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    transition: all 0.5s ease;
+    width: max-content;
+    text-shadow: 1px 1px 10px #404041;
+}
+
+.Source-ref:hover {
+  cursor: default;
+  text-shadow: none;
+  opacity: 1;
+  color: #404041;
+  background-color: rgba(245,245,245,0.7);
+}
+
+.Source-ref a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Source-ref a:hover {
+  display: inline-block;
+  color: #078fb8;
 }
