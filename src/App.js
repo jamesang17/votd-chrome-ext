@@ -12,7 +12,9 @@ function App() {
       <div className="App-main">
         <div className="Time-container">
             <Clock className="Time-component"/>
-            <Greeting className="Time-component"/>
+            <div className="Time-component">
+                <Greeting />
+            </div>
         </div>
         <div className="Votd">
             <Votd />
