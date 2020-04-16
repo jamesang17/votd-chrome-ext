@@ -17,7 +17,7 @@ export default class Votd extends React.Component {
 
     getVerse() {
         var dayOfTheYear = moment().dayOfYear();
-        if (this.state.day !== dayOfTheYear) {
+        if (this.state.day !== dayOfTheYear || this.state.day === null) {
             var url = 'https://developers.youversionapi.com/1.0/verse_of_the_day/' + dayOfTheYear + '?version_id=1';
             const otherParam = {
                 headers: {
@@ -32,6 +32,10 @@ export default class Votd extends React.Component {
                     this.setState({ verseRef: response.verse.human_reference });
                     this.setState({ verseUrlRef: response.verse.url });
                     this.setState({ day : dayOfTheYear });
+                    localStorage.setItem("verseText", JSON.stringify(response.verse.text));
+                    localStorage.setItem("verseRef", JSON.stringify(response.verse.human_reference));
+                    localStorage.setItem("verseUrlRef", JSON.stringify(response.verse.url));
+                    localStorage.setItem("day", JSON.stringify(dayOfTheYear));
                 })
                 .catch((error) => console.error(error));
         }
@@ -64,7 +68,11 @@ export default class Votd extends React.Component {
     }
 
     componentDidMount() {
-        this.hydrateStateWithLocalStorage();
+        if (localStorage.length !== 0) {
+            this.hydrateStateWithLocalStorage();
+        } else {
+            this.getVerse();
+        }
 
         // add event listener to save state to localStorage
         // when user leaves/refreshes the page
