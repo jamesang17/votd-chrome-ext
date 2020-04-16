@@ -4,6 +4,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
+    margin: 0 0 5% 0;
 }
 
 .Greeting {

@@ -25,15 +25,19 @@ export default class Votd extends React.Component {
                     "X-YouVersion-Developer-Token" : process.env.REACT_APP_YOUVERSION_TOKEN
                 }
             }
-            fetch(url, otherParam)
-                .then((response) => response.json())
-                .then((response) => {
-                    this.setState({ verseText: response.verse.text });
-                    this.setState({ verseRef: response.verse.human_reference });
-                    this.setState({ verseUrlRef: response.verse.url });
-                    this.setState({ day : dayOfTheYear });
-                })
-                .catch((error) => console.error(error));
+            // fetch(url, otherParam)
+            //     .then((response) => response.json())
+            //     .then((response) => {
+            //         this.setState({ verseText: response.verse.text });
+            //         this.setState({ verseRef: response.verse.human_reference });
+            //         this.setState({ verseUrlRef: response.verse.url });
+            //         this.setState({ day : dayOfTheYear });
+            //     })
+            //     .catch((error) => console.error(error));
+                    this.setState({ verseText: "And being found in fashion as a man, he humbled himself, and became obedient unto death, even the death of the cross." });
+                    this.setState({ verseRef: "Philippians 2:8" });
+                    this.setState({ verseUrlRef: "url" });
+                    this.setState({ day : 106 });
         }
     }
 
