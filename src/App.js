@@ -18,12 +18,13 @@ class App extends React.Component {
 
     getBackgroundImage() {
         var dayOfTheYear = moment().dayOfYear();
-        if (this.state.day !== dayOfTheYear) {
+        if (this.state.day !== dayOfTheYear || this.state.day === null) {
             var url = 'https://source.unsplash.com/collection/152630/1600x900/';
             fetch(url)
                 .then((response) => {
                     this.setState({ background: response["url"] });
                     this.setState({ day : dayOfTheYear });
+                    localStorage.setItem("background", JSON.stringify(response["url"]));
                 })
                 .catch((error) => console.error(error));
         }
@@ -55,7 +56,11 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.hydrateStateWithLocalStorage();
+        if (localStorage.getItem("background") !== null) {
+            this.hydrateStateWithLocalStorage();
+        } else {
+            this.getBackgroundImage();
+        }
 
         // add event listener to save state to localStorage
         // when user leaves/refreshes the page
@@ -92,7 +97,7 @@ class App extends React.Component {
                         <a href="https://unsplash.com/collections/162213/long-exposure" target="_blank" rel="noopener noreferrer"> Unsplash</a>
                     </div>
                     <div className="Source-ref">
-                        Source: 
+                        Source:
                         <a href="https://github.com/jamesang17/votd-chrome-ext" target="_blank" rel="noopener noreferrer" >@jamesang17</a>
                     </div>
                 </div>

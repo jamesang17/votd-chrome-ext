@@ -6,6 +6,19 @@
   "chrome_url_overrides" : {
     "newtab": "index.html"
   },
+  "icons": {
+    "16": "icons/votd-icon16.png",
+    "48": "icons/votd-icon48.png",
+    "128": "icons/votd-icon128.png"
+  },
+  "browser_action": {
+    "default_title": "Verse Of The Day",
+    "default_icon": {
+      "16": "icons/votd-icon16.png",
+      "19": "icons/votd-icon19.png",
+      "38": "icons/votd-icon38.png"
+    }
+  },
   "content_security_policy": "script-src 'self' 'sha256-gdC7YPVLhs2vs8X0AOAHBp8apNMN/9DaleEeQYhpY14='; object-src 'self'",  "permissions": [
   ]
 }
