@@ -29,6 +29,7 @@ export default class Name extends React.Component {
         super(props);
         this.state = {
             name: "",
+            value: "",
             anchorEl: null,
             open: false,
             openDialog: false
@@ -72,12 +73,19 @@ export default class Name extends React.Component {
     }
 
     handleSubmit(event) {
-        this.setState({ name: ", " + this.state.name  + "." });
+        var name = this.state.value.trim();
+        if (name !== "") {
+            name = ", " + name + ".";
+            this.setState({ name: name });
+            localStorage.setItem("name", JSON.stringify(name));
+        } else {
+            this.setState({ name: JSON.parse(localStorage.getItem("name")) });
+        }
+        this.setState({ value: "" });
         this.setState({ open: false });
         this.setState({ anchorEl: true });
         this.setState({ disabled: false });
         this.setState({ openDialog: false });
-        localStorage.setItem("name", JSON.stringify(", " + this.state.name + "."));
     }
 
     render() {
@@ -119,7 +127,7 @@ export default class Name extends React.Component {
                             <TextField autoFocus id="name"
                                 label="name" type="text"
                                 fullWidth
-                                onChange={(e) => this.setState({ name: e.currentTarget.value })} />
+                                onChange={(e) => this.setState({ value: e.currentTarget.value })} />
                         </DialogContent>
                         <DialogActions>
                             <Button onClick={this.handleClose} color="default">
