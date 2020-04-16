@@ -22,8 +22,6 @@ class App extends React.Component {
             var url = 'https://source.unsplash.com/collection/152630/1600x900/';
             fetch(url)
                 .then((response) => {
-                    console.log(response);
-                    console.log(response["url"]);
                     this.setState({ background: response["url"] });
                     this.setState({ day : dayOfTheYear });
                 })
