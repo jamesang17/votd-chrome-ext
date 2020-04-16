@@ -91,6 +91,10 @@ class App extends React.Component {
                         <a href="https://youversion.com/" target="_blank" rel="noopener noreferrer">YouVersion</a>,
                         <a href="https://unsplash.com/collections/162213/long-exposure" target="_blank" rel="noopener noreferrer"> Unsplash</a>
                     </div>
+                    <div className="Source-ref">
+                        Source: 
+                        <a href="https://github.com/jamesang17/votd-chrome-ext" target="_blank" rel="noopener noreferrer" >@jamesang17</a>
+                    </div>
                 </div>
             </Fade>
     )};
