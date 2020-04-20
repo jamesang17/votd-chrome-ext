@@ -20,6 +20,9 @@ class App extends React.Component {
         var dayOfTheYear = moment().dayOfYear();
         if (this.state.day !== dayOfTheYear || this.state.day === null) {
             var url = 'https://source.unsplash.com/collection/782142/1600x900/';
+            if (dayOfTheYear % 2 === 0) {
+              url = 'https://source.unsplash.com/collection/152630/1600x900/';
+            }
             fetch(url)
                 .then((response) => {
                     this.setState({ background: response["url"] });
