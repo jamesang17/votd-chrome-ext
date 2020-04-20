@@ -68,7 +68,7 @@ export default class Name extends React.Component {
 
     handleClose() {
         this.setState({ open: false });
-        this.setState({ anchorEl: true });
+        this.setState({ anchorEl: null });
         this.setState({ openDialog: false });
     }
 
@@ -83,8 +83,7 @@ export default class Name extends React.Component {
         }
         this.setState({ value: "" });
         this.setState({ open: false });
-        this.setState({ anchorEl: true });
-        this.setState({ disabled: false });
+        this.setState({ anchorEl: null });
         this.setState({ openDialog: false });
     }
 
@@ -115,7 +114,7 @@ export default class Name extends React.Component {
                     }}
                 >
                     {options.map((option) => (
-                      <MenuItem key={option} selected={option === 'Pyxis'} onClick={this.handleMenuClick}>
+                      <MenuItem key={option} onClick={this.handleMenuClick}>
                         {option}
                       </MenuItem>
                     ))}

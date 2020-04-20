@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Votd from './components/Votd';
+import Verse from './components/Verse/Verse';
 import Clock from './components/Clock';
 import Greeting from './components/Greeting';
 import { Fade } from '@material-ui/core';
@@ -19,7 +19,7 @@ class App extends React.Component {
     getBackgroundImage() {
         var dayOfTheYear = moment().dayOfYear();
         if (this.state.day !== dayOfTheYear || this.state.day === null) {
-            var url = 'https://source.unsplash.com/collection/152630/1600x900/';
+            var url = 'https://source.unsplash.com/collection/782142/1600x900/';
             fetch(url)
                 .then((response) => {
                     this.setState({ background: response["url"] });
@@ -77,6 +77,10 @@ class App extends React.Component {
     }
 
     render() {
+      let versionId = localStorage.getItem("versionId");
+      if (versionId === "" || versionId === null) {
+        versionId = 1
+      }
         return (
             <Fade in={true} timeout={1000}>
                 <div className="App" style={{ backgroundImage: `url(${this.state.background})` }}>
@@ -88,7 +92,7 @@ class App extends React.Component {
                             </div>
                         </div>
                         <div className="Votd">
-                            <Votd />
+                            <Verse />
                         </div>
                     </div>
                     <div className="Credits">
