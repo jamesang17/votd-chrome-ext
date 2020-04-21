@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 import Clock from './components/Clock';
 import Greeting from './components/Greeting';
-import Votd from './components/Votd';
+import Votd from './components/Verse/Votd';
 
 test('renders time', () => {
   const { getByText } = render(<Clock />);
