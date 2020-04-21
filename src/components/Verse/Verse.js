@@ -51,8 +51,10 @@ export default class Verse extends React.Component {
   }
 
   getVersions() {
-    var map = new Map(JSON.parse(localStorage.getItem("versionMap")));
-    if (map.size <= 0) {
+    // var map = new Map(JSON.parse(localStorage.getItem("versionMap")));
+    var map = this.state.versionMap;
+    console.log(map);
+    if (map.size === 1) {
       var url = 'https://developers.youversionapi.com/1.0/versions';
       const otherParam = {
         headers: {
@@ -92,7 +94,7 @@ export default class Verse extends React.Component {
       const title = event.currentTarget.innerText;
       localStorage.setItem("versionId", this.state.versionMap.get(title).id);
       this.setState({ versionTitle: title });
-      localStorage.setItem("versionTitle", title);
+      localStorage.setItem("versionTitle", JSON.stringify(title));
       this.setState({ anchorEl: null });
       this.setState({ open: false });
   }
@@ -116,8 +118,8 @@ export default class Verse extends React.Component {
     var versionTitleKey = "versionTitle";
     if (localStorage.hasOwnProperty(versionTitleKey)) {
       let value = localStorage.getItem(versionTitleKey);
-      value = JSON.parse(value);
       try {
+        value = JSON.parse(value);
         this.setState({ [versionTitleKey]: value });
       } catch(e) {
         this.setState({ [versionTitleKey]: value });
