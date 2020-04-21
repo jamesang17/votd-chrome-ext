@@ -51,9 +51,7 @@ export default class Verse extends React.Component {
   }
 
   getVersions() {
-    // var map = new Map(JSON.parse(localStorage.getItem("versionMap")));
     var map = this.state.versionMap;
-    console.log(map);
     if (map.size === 1) {
       var url = 'https://developers.youversionapi.com/1.0/versions';
       const otherParam = {
@@ -136,7 +134,6 @@ export default class Verse extends React.Component {
 
   componentDidMount() {
       if (localStorage.length !== 0) {
-        console.log("componentDidMount: using cached data");
         this.hydrateStateWithLocalStorage();
       }
       // add event listener to save state to localStorage

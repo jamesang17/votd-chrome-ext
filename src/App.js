@@ -12,25 +12,24 @@ class App extends React.Component {
         super(props);
         this.state = {
             background: "",
-            day: 0
+            backgroundDay: 0
         }
     }
 
     getBackgroundImage() {
-        var dayOfTheYear = moment().dayOfYear();
-        if (this.state.day !== dayOfTheYear || this.state.day === null) {
-            var url = 'https://source.unsplash.com/collection/782142/1600x900/';
-            if (dayOfTheYear % 2 === 0) {
-              url = 'https://source.unsplash.com/collection/152630/1600x900/';
-            }
-            fetch(url)
-                .then((response) => {
-                    this.setState({ background: response["url"] });
-                    this.setState({ day : dayOfTheYear });
-                    localStorage.setItem("background", JSON.stringify(response["url"]));
-                })
-                .catch((error) => console.error(error));
-        }
+      var dayOfTheYear = moment().dayOfYear();
+      var url = 'https://source.unsplash.com/collection/782142/1600x900/';
+      if (dayOfTheYear % 2 === 0) {
+        url = 'https://source.unsplash.com/collection/152630/1600x900/';
+      }
+      fetch(url)
+      .then((response) => {
+        this.setState({ background: response["url"] });
+        this.setState({ backgroundDay: dayOfTheYear });
+        localStorage.setItem("backgroundDay", JSON.stringify(dayOfTheYear));
+        localStorage.setItem("background", JSON.stringify(response["url"]));
+      })
+      .catch((error) => console.error(error));
     }
 
     hydrateStateWithLocalStorage() {
@@ -50,31 +49,16 @@ class App extends React.Component {
         }
     }
 
-    saveStateToLocalStorage() {
-        // for every item in React state
-        for (let key in this.state) {
-            // save to localStorage
-            localStorage.setItem(key, JSON.stringify(this.state[key]));
-      }
-    }
-
     componentDidMount() {
         if (localStorage.getItem("background") !== null) {
             this.hydrateStateWithLocalStorage();
         } else {
             this.getBackgroundImage();
         }
-
-        // add event listener to save state to localStorage
-        // when user leaves/refreshes the page
-        window.addEventListener(
-            "beforeunload",
-            this.saveStateToLocalStorage.bind(this)
-        );
     }
 
     componentDidUpdate(prevState) {
-        if (prevState.day !== this.state.day) {
+        if (this.state.backgroundDay !== undefined && this.state.backgroundDay !== moment().dayOfYear()) {
             this.getBackgroundImage();
         }
     }

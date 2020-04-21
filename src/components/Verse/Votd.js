@@ -81,12 +81,9 @@ export default class Votd extends React.Component {
     }
 
     componentDidUpdate(prevState,prevProps) {
-        if ((prevState.day !== this.state.day && prevState.day !== undefined)) {
+        if (this.state.day !== undefined && this.state.day !== moment().dayOfYear()) {
             this.getVerse();
-            console.log("componentDidUpdate: Calling getVerse!");
         } else if (prevState.versionId !== this.props.versionId && prevState.versionId !== undefined) {
-            console.log("prevState.versionId : " + prevState.versionId + " | this.props.versionId : " + this.props.versionId);
-            console.log("componentDidUpdate: Calling getVerse!");
             this.getVerse();
         }
     }
