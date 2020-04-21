@@ -13,11 +13,14 @@ const ABV = "abbreviation";
 const VersionButton = withStyles({
   root: {
     width: '10vw',
-    color: 'rgba(255,255,255,0.5)',
+    color: 'rgba(64, 64, 65,0.8)',
     marginTop: '0.5%',
     '&:hover': {
        backgroundColor: 'rgba(255,255,255,0.7)',
        color: 'rgba(23,23,23,1.0)'
+    },
+    '& .MuiListItem-button': {
+      overflow: 'auto',
     }
   },
 })(Button);
@@ -171,7 +174,6 @@ export default class Verse extends React.Component {
           PaperProps={{
             style: {
               maxHeight: 20 * 4.5,
-              width: '25ch',
             },
           }}
         >
