@@ -7,9 +7,9 @@ export default class Votd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            verseText: "Loading...",
-            verseRef: "Bible.com",
-            verseUrlRef: "https://www.bible.com",
+            verseText: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+            verseRef: "John 3:16",
+            verseUrlRef: "https://www.bible.com/bible/111/jhn.3.16",
             day: 0
         }
         this.getVerse = this.getVerse.bind(this);
