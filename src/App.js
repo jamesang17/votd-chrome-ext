@@ -18,10 +18,9 @@ class App extends React.Component {
 
     getBackgroundImage() {
       var dayOfTheYear = moment().dayOfYear();
-      var url = 'https://source.unsplash.com/collection/782142/1600x900/';
-      if (dayOfTheYear % 2 === 0) {
-        url = 'https://source.unsplash.com/collection/152630/1600x900/';
-      }
+        var collections = ["162468", "782142", "208422", "827743", "1052192","175083"]
+        var collectionId = collections[Math.floor(Math.random() * collections.length)]
+        var url = 'https://source.unsplash.com/collection/' + collectionId + '/1600x900/';
       fetch(url)
       .then((response) => {
         this.setState({ background: response["url"] });
