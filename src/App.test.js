@@ -19,8 +19,8 @@ test('renders greeting', () => {
 
 test('renders verse of the day', () => {
   const { getByText } = render(<Votd />);
-  const votdTextElement = getByText(/Loading\.\.\./i);
-  const votdRefElement = getByText(/Bible\.com/i);
+  const votdTextElement = getByText(/For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life\./i);
+  const votdRefElement = getByText(/John 3:16/i);
   expect(votdTextElement).toBeInTheDocument();
   expect(votdRefElement).toBeInTheDocument();
 });
