@@ -9,7 +9,7 @@
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^11.2.1",
     "dotenv": "^8.2.0",
-    "moment-timezone": "^0.5.31",
+    "moment-timezone": "^0.5.35",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
